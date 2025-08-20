@@ -1,10 +1,15 @@
 import requests
+import pandas as pd
+import numpy as np
 
-url = "https://ipinfo.io/190.60.194.114/json"
 
-try:
-    response = requests.get(url)
-    data = response.json()
-    print(data)
-except Exception as e:
-    print(f"Error occurred: {e}")
+class Formula1Extract:
+    def __init__(self, csv_path: str):
+        self.csv = csv_path
+
+    def queries(self):
+        data = pd.read_csv(self.data)
+        return data
+
+    def response(self, data):
+        return data.head()
